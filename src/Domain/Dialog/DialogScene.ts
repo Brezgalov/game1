@@ -13,8 +13,16 @@ export default class DialogScene
 
     public addOption(option: DialogSceneOption): DialogScene
     {
+        option.bindParentScene(this);
         this.options.set(option.getId(), option);
         
+        return this;
+    }
+
+    public updateText(text: string): DialogScene
+    {
+        this.text = text;
+
         return this;
     }
 
@@ -35,13 +43,10 @@ export default class DialogScene
         );
     }
 
-    public selectOption(optionId: string): DialogScene|null
+    public getOption(optionId: string): DialogSceneOption|null
     {
         let option = this.options.get(optionId);
-        if (!option) {
-            return null;
-        }
 
-        return option.getNextScene();
+        return option ? option : null;
     }
 }
