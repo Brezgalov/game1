@@ -6,7 +6,11 @@ import HtmlObject from './../../../src/Domain/Html/HtmlObject';
 {
     @test 'html object building'()
     {
-        let div = new HtmlObject('div');
+        let text = 'Hello HTML!';
+
+        let span = new HtmlObject('span').contains(text);
+
+        let div = new HtmlObject('div').contains(span);
 
         div.attribute('id').set('div1');
         div.attribute('class').append('class_1').append('class2')
@@ -22,5 +26,7 @@ import HtmlObject from './../../../src/Domain/Html/HtmlObject';
         let classAtr = attributes[1];
         expect('class').equal(classAtr.getName());
         expect('class_1 class2').equal(classAtr.getValue());
+
+        expect('<div id="div1" class="class_1 class2"><span>Hello HTML!</span></div>').equal(div.render());
     }
 }
