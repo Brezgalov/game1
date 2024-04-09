@@ -1,7 +1,7 @@
 import { suite, test } from '@testdeck/mocha';
 import { expect } from 'chai';
-import DialogScene from './../../../src/Domain/Dialog/DialogScene';
-import DialogSceneOption from './../../../src/Domain/Dialog/DialogSceneOption';
+import DialogScene from './../../../src/Engine/Domain/Dialog/DialogScene';
+import DialogSceneOption from './../../../src/Engine/Domain/Dialog/DialogSceneOption';
 
 @suite class DialogSceneTest
 {

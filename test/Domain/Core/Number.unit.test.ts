@@ -1,6 +1,6 @@
 import { suite, test } from '@testdeck/mocha';
 import { expect } from 'chai';
-import Number from '../../../src/Domain/Core/Number';
+import Number from '../../../src/Engine/Domain/Core/Number';
 
 @suite class NumberUnitTests {
 

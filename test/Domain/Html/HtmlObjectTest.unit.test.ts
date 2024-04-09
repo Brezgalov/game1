@@ -1,6 +1,7 @@
 import { suite, test } from '@testdeck/mocha';
 import { expect } from 'chai';
-import HtmlObject from './../../../src/Domain/Html/HtmlObject';
+
+import HtmlObject from './../../../src/Engine/Domain/Html/HtmlObject';
 
 @suite class DialogSceneTest
 {
