@@ -4,11 +4,11 @@ export default class HtmlObject
 {
     private tag: string;
     private attributes: Map<string, HtmlAttribute>;
-    private content: string|HtmlObject;
+    private content: Array<string|HtmlObject>;
 
     public constructor(tag: string)
     {
-        this.content = '';
+        this.content = new Array<string|HtmlObject>();
         this.tag = tag;
         this.attributes = new Map<string, HtmlAttribute>();
     }
@@ -32,9 +32,9 @@ export default class HtmlObject
         return [...this.attributes.values()];
     }
 
-    public contains(content: string|HtmlObject): HtmlObject
+    public addContent(content: string|HtmlObject): HtmlObject
     {
-        this.content = content;
+        this.content.push(content);
         return this;
     }
 
@@ -48,9 +48,11 @@ export default class HtmlObject
 
         html += '>'
 
-        html += this.content instanceof HtmlObject
-            ? this.content.render()
-            : this.content;
+        this.content.forEach((item: string|HtmlObject) => {
+            html += item instanceof HtmlObject
+            ? item.render()
+            : item;
+        });        
 
         return html + '</' + this.tag + '>';
     }

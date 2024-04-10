@@ -1,6 +1,6 @@
 import { suite, test } from '@testdeck/mocha';
 import { expect, assert } from 'chai';
-import IdProvider from '../../../src/Engine/Domain/Core/IdProvider';
+import IdProvider from '../../../../src/Engine/Domain/Core/IdProvider';
 
 @suite class IdProviderTest {
 

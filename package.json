@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
+    "g1_build": "webpack --mode production --config ./src/G1_TheKey/webpack.config.js",
     "watch": "webpack -w",
     "build:dev": "webpack",
     "build": "webpack --mode production",

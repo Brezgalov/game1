@@ -1,6 +1,6 @@
 import { suite, test } from '@testdeck/mocha';
 import { expect, assert } from 'chai';
-import Events from '../../../src/Engine/Domain/Core/Events';
+import Events from '../../../../src/Engine/Domain/Core/Events';
 
 @suite class EventsUnitTests {
 
